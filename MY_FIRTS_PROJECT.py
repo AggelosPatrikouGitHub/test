@@ -7,7 +7,6 @@ url = 'https://storage.googleapis.com/courses_data/Assignment%20CSV/finance_liqu
 df = pd.read_csv(url)
 df.head()
 
-
 df['Date'] = pd.to_datetime(df['Date'])
 df = df[(df['Date'].dt.year >= 2016) & (df['Date'].dt.year <= 2019)]
 df = df.dropna(subset=['ZIP Code', 'Item Description', 'Sale (Dollars)', 'Store Number'])
